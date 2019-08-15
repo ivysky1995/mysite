@@ -1,0 +1,15 @@
+Doi ten may ao vo vagrant-local.yml
+
+‰Šú‰» git init
+git add .
+dit commit -m "Initial import"
+
+
+
+tao migrate 
+
+chay ssh xong
+ls -la
+cd 
+cd /app/
+./yii migrate/create create_abc_table

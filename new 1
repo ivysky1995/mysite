@@ -1,0 +1,15 @@
+Khi làm pagination 
+Ở trong view/index
+Cho giá trị pagination ở trong dataProvider luôn 
+ <?php 
+        $dataProvider = new ActiveDataProvider([
+        'query' => Country::find(),
+        'pagination' => [
+        'pageSize' => 2,
+    ],
+    ]);
+?>
+sau đó gridview ra kèm theo giá trị dâtprovider
+<?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,

@@ -1,0 +1,130 @@
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO pet
+    -> VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);
+
+CREATE TABLE words (
+    wordid INT(11) NOT NULL PRIMARY KEY,
+    word VARCHAR(100) NOT NULL,
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+CREATE TABLE User(
+    id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL ,
+    password VARCHAR(50) NOT NULL ,
+    firstName VARCHAR(50) NOT NULL ,
+    lastName VARCHAR(50) NOT NULL ,
+    email VARCHAR (50) NOT NULL 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+ALTER TABLE Users ADD FOREIGN KEY(groupid) REFERENCES Groups(groupid);
+
+
+CREATE TABLE newWord (
+  id int primary key,
+  word_id int,
+  word varchar(20)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE dictionary (
+  id int primary key,
+  word_id int,
+  japanese varchar(50),
+  english varchar(50),
+  vietnamese varchar(50)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+
+ALTER TABLE  ADD FOREIGN KEY(word_id) REFERENCES words(id);
+
+INSERT INTO words VALUES (1,'project');
+INSERT INTO menu VALUES (1,'japanese','プロジェクト');
+INSERT INTO menus VALUES (1,'vietnamese','du an');
+INSERT INTO menus VALUES (1,'english','project');
+
+
+delete from words where id;
+ALTER TABLE words DROP FOREIGN KEY id;
+
+
+
+
+
+CREATE TABLE newWord (
+  id int primary key,
+  \
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+CREATE TABLE message (
+  id int primary key,
+  language varchar(50),
+  translation varchar(50)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+CREATE TABLE source_message (
+  id int primary key,
+  category varchar(50),
+  message varchar(50)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+
+
+
+//Them column
+
+ALTER TABLE words ADD message varchar(50);
+
+
+//Them khoa ngoai foreign key vao 
+ CONSTRAINT fk_group FOREIGN KEY (groupid) REFERENCES Groups(groupid)
+
+CREATE TABLE term (
+id INT(11) NOT NULL PRIMARY KEY,
+word_ja varchar(50),
+japanese varchar(50),
+word_vi varchar(50),
+vietnamese varchar(50),
+word_en varchar(50),
+english varchar(50)
+  ) ENGINE=INNODB DEFAULT CHARSET=utf8;
+ 
+	10:56 2019/07/09
+
+
+
+// add foreign key vao sau
+ALTER TABLE dictionary ADD CONSTRAINT fk_group FOREIGN KEY(word_id) REFERENCES words(id);
+
+
+
+
+//migration tao id 
+'id' => $this->primaryKey(),
+        
+    'username' => $this->string()->notNull()->unique(),
+   
+         'auth_key' => $this->string(32)->notNull(),
+        
+    'password_hash' => $this->string()->notNull(),
+         
+   'password_reset_token' => $this->string()->unique(),
+    
+        'email' => $this->string()->notNull()->unique(),

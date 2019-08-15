@@ -1,0 +1,8 @@
+/////////////////////////////////////////////////////////////////^
+-----------------------------------------------------------------
+Ngày 18/07 
+1 thứ rất hay đó là tạo nút ấn chạy sang 1 cái chỗ khác theo id projectId
+<?php echo Html::a('View Term &raquo;',['/term/index','projectId'=>$project->id],['class'=>'btn btn-info']);?>
+http://yii2basic.test/term/index?projectId=1 
+khi trang web có đuôi là index?projectId=1 
+thì chỉ cần cho nó vô ['/term/index','projectId'=>$project->id]

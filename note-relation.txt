@@ -1,0 +1,18 @@
+//o controller 
+ public function actionIndex($project_id)
+    {
+        $searchModel = new TermSearch();
+		$searchModel->project_id = $project_id
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+//o model search 
+
+ $query->andFilterWhere([
+            'id' => $this->id,
+	'project_id' => $this->project_id,
+        ]);
